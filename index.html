@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV Professionnel - [Votre Nom]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Couleur de fond légère */
+            color: #374151; /* Couleur de texte par défaut */
+        }
+        /* Styles personnalisés pour les sections */
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2;
+        }
+        .card {
+            @apply bg-white p-6 rounded-xl shadow-lg;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #3b82f6; /* Bordure bleue autour de la photo */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+
+        <header class="card text-center mb-8">
+            <div class="flex flex-col items-center">
+                <img src="https://placehold.co/150x150/a0a0a0/ffffff?text=Votre+Photo" alt="Votre Photo" class="profile-picture mb-4">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-2">Votre Nom Complet</h1>
+                <p class="text-xl text-gray-600 mb-4">Votre Titre Professionnel (ex: Développeur Web, Chef de Projet)</p>
+                <div class="flex flex-wrap justify-center gap-4 text-gray-700">
+                    <a href="mailto:votre.email@example.com" class="hover:text-blue-600 transition duration-300">
+                        <span class="font-medium">Email:</span> votre.email@example.com
+                    </a>
+                    <a href="tel:+33123456789" class="hover:text-blue-600 transition duration-300">
+                        <span class="font-medium">Téléphone:</span> +33 1 23 45 67 89
+                    </a>
+                    <a href="https://www.linkedin.com/in/votrenom" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition duration-300">
+                        <span class="font-medium">LinkedIn:</span> linkedin.com/in/votrenom
+                    </a>
+                    </div>
+            </div>
+        </header>
+
+        <section class="card mb-8">
+            <h2 class="section-title">À Propos de Moi</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                Bonjour ! Je suis [Votre Nom], un(e) [Votre Titre Professionnel] passionné(e) par [Votre Domaine d'intérêt]. Fort(e) de [Nombre] années d'expérience en [Domaine], je suis spécialisé(e) dans [Vos Compétences Clés]. Mon objectif est de [Votre Objectif Professionnel]. Je suis toujours à la recherche de nouveaux défis et d'opportunités pour mettre mes compétences au service de projets innovants.
+                <br><br>
+                N'hésitez pas à me contacter pour discuter de la manière dont je peux contribuer à votre équipe ou à votre projet.
+            </p>
+        </section>
+
+        <section class="card mb-8">
+            <h2 class="section-title">Expérience Professionnelle</h2>
+
+            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+                <h3 class="text-xl font-semibold text-gray-800">Titre du Poste 1</h3>
+                <p class="text-md text-gray-600">Nom de l'Entreprise 1 | Ville, Pays | Janvier 2020 - Présent</p>
+                <ul class="list-disc list-inside mt-2 text-gray-700">
+                    <li>Description de la tâche ou réalisation clé 1. Mettez en avant les résultats mesurables.</li>
+                    <li>Description de la tâche ou réalisation clé 2. Utilisez des verbes d'action forts.</li>
+                    <li>Description de la tâche ou réalisation clé 3. Adaptez ces points à vos expériences réelles.</li>
+                </ul>
+            </div>
+
+            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+                <h3 class="text-xl font-semibold text-gray-800">Titre du Poste 2</h3>
+                <p class="text-md text-gray-600">Nom de l'Entreprise 2 | Ville, Pays | Mars 2018 - Décembre 2019</p>
+                <ul class="list-disc list-inside mt-2 text-gray-700">
+                    <li>Description de la tâche ou réalisation clé 1.</li>
+                    <li>Description de la tâche ou réalisation clé 2.</li>
+                </ul>
+            </div>
+
+            </section>
+
+        <section class="card mb-8">
+            <h2 class="section-title">Formation</h2>
+
+            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+                <h3 class="text-xl font-semibold text-gray-800">Nom du Diplôme 1</h3>
+                <p class="text-md text-gray-600">Nom de l'Établissement 1 | Ville, Pays | Année de Diplôme</p>
+                <p class="text-gray-700 mt-1">
+                    Description courte de la formation ou des spécialisations.
+                </p>
+            </div>
+
+            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+                <h3 class="text-xl font-semibold text-gray-800">Nom du Diplôme 2</h3>
+                <p class="text-md text-gray-600">Nom de l'Établissement 2 | Ville, Pays | Année de Diplôme</p>
+                <p class="text-gray-700 mt-1">
+                    Description courte de la formation ou des spécialisations.
+                </p>
+            </div>
+
+            </section>
+
+        <section class="card mb-8">
+            <h2 class="section-title">Compétences</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Compétences Techniques</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Langages de programmation (ex: Python, JavaScript, Java)</li>
+                        <li>Frameworks (ex: React, Angular, Vue.js, Spring Boot)</li>
+                        <li>Bases de données (ex: SQL, NoSQL, MongoDB)</li>
+                        <li>Outils (ex: Git, Docker, AWS, Azure)</li>
+                        </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Langues</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Français: Langue Maternelle</li>
+                        <li>Anglais: Courant (C1)</li>
+                        <li>Espagnol: Intermédiaire (B2)</li>
+                        </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Compétences Non Techniques (Soft Skills)</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Communication</li>
+                        <li>Travail d'équipe</li>
+                        <li>Résolution de problèmes</li>
+                        <li>Adaptabilité</li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mb-8">
+            <h2 class="section-title">Projets</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                Voici quelques-uns de mes projets récents. N'hésitez pas à cliquer sur les liens pour en savoir plus.
+            </p>
+
+            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+                <h3 class="text-xl font-semibold text-gray-800">Nom du Projet 1</h3>
+                <p class="text-md text-gray-600">Technologies utilisées: [Liste des technologies]</p>
+                <p class="text-gray-700 mt-2">
+                    Description courte du projet, de son objectif et de votre rôle.
+                </p>
+                <a href="https://github.com/votrenom/projet1" target="_blank" rel="noopener noreferrer"
+                   class="text-blue-600 hover:underline mt-2 inline-block">Voir le projet (GitHub/Lien démo)</a>
+            </div>
+
+            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+                <h3 class="text-xl font-semibold text-gray-800">Nom du Projet 2</h3>
+                <p class="text-md text-gray-600">Technologies utilisées: [Liste des technologies]</p>
+                <p class="text-gray-700 mt-2">
+                    Description courte du projet, de son objectif et de votre rôle.
+                </p>
+                <a href="https://votrenom.com/projet2" target="_blank" rel="noopener noreferrer"
+                   class="text-blue-600 hover:underline mt-2 inline-block">Voir le projet (GitHub/Lien démo)</a>
+            </div>
+
+            </section>
+
+        <section class="card text-center mb-8">
+            <h2 class="section-title">Contact & Téléchargement</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                Je suis ouvert(e) aux nouvelles opportunités. N'hésitez pas à me contacter ou à télécharger mon CV.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:votre.email@example.com"
+                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    Me Contacter
+                </a>
+                <a href="https://example.com/votre_cv.pdf" download="Votre_Nom_CV.pdf"
+                   class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    Télécharger mon CV (PDF)
+                </a>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm mt-8">
+            <p>&copy; 2025 Votre Nom. Tous droits réservés.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
