@@ -9,43 +9,68 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Couleur de fond légère */
+            /* Couleur de base du fond, maintenant un gris très clair */
+            background-color: #f3f4f6; /* Un gris très léger */
+            /* Motif de lignes diagonales subtiles, ajusté pour être visible sur le nouveau fond */
+            background-image: repeating-linear-gradient(
+                -45deg, /* Angle des lignes */
+                #e5e7eb 0%, /* Couleur et début de la première ligne */
+                #e5e7eb 1px, /* Fin de la première ligne (1px d'épaisseur) */
+                transparent 1px, /* Début de l'espace transparent */
+                transparent 10px /* Fin de l'espace transparent (9px d'espace) */
+            );
+            background-size: 10px 10px; /* Taille de répétition du motif */
             color: #374151; /* Couleur de texte par défaut */
         }
-        /* Styles personnalisés pour les sections */
+        /* Styles personnalisés pour les titres de section (les "bulles") */
         .section-title {
-            @apply text-3xl font-bold text-gray-800 mb-6 border-b-2 border-blue-500 pb-2;
+            /* Styles Tailwind pour l'alignement, la taille, le padding, l'ombre, les bords ronds */
+            @apply text-3xl font-bold text-gray-800 mb-6 flex items-center justify-center px-8 py-4 rounded-full shadow-md;
+            /* Styles personnalisés pour la transparence et le contour subtil */
+            background-color: rgba(255, 255, 255, 0.7); /* Fond blanc semi-transparent */
+            border: 1px solid rgba(209, 213, 219, 0.3); /* Contour gris très clair, quasi transparent */
+            max-width: fit-content; /* La largeur s'adapte au contenu du texte */
+            margin-left: auto; /* Centre la bulle horizontalement */
+            margin-right: auto; /* Centre la bulle horizontalement */
+            /* Suppression des styles de bordure et padding-bottom précédents */
+            border-bottom: none;
+            padding-bottom: auto; /* S'assure que le padding-bottom ne pose pas de problème avec le nouveau padding */
+        }
+        .section-title .emoji {
+            @apply mr-3 text-3xl; /* Style pour les émojis dans les titres */
         }
         .card {
-            @apply bg-white p-6 rounded-xl shadow-lg;
+            @apply bg-white p-7 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out; /* Ombre plus prononcée au survol */
         }
         .profile-picture {
-            width: 150px;
-            height: 150px;
+            width: 160px; /* Légèrement plus grand */
+            height: 160px; /* Légèrement plus grand */
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid #3b82f6; /* Bordure bleue autour de la photo */
+            border: 5px solid #3b82f6; /* Bordure un peu plus épaisse */
+            box-shadow: 0 0 0 7px rgba(59, 130, 246, 0.2); /* Effet d'halo */
+        }
+        .list-item-spacing li {
+            margin-bottom: 0.5rem; /* Espacement entre les éléments de liste */
         }
     </style>
 </head>
 <body class="antialiased">
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
-
-        <header class="card text-center mb-8">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-10 max-w-5xl"> <header class="card text-center mb-10">
             <div class="flex flex-col items-center">
-                <img src="Images/egrq.jpg" alt="Votre Photo de Profil" class="profile-picture mb-4">
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-2">AstroboyEvil</h1>
-                <p class="text-xl text-gray-600 mb-4">Gérance de serveur et Chef de projet</p>
-                <div class="flex flex-wrap justify-center gap-4 text-gray-700">
-                    <span class="font-medium">Discord:</span> astroboyevil
-                    </div>
+                <img src="egrq.jpg" alt="Votre Photo de Profil" class="profile-picture mb-5">
+                <h1 class="text-5xl font-extrabold text-gray-900 mb-3">AstroboyEvil</h1>
+                <p class="text-2xl text-gray-600 mb-5">Gérance de serveur et Chef de projet</p>
+                <div class="flex flex-wrap justify-center gap-6 text-gray-700">
+                    <span class="font-medium text-lg flex items-center"><span class="text-blue-500 mr-2">🎮</span> Discord: astroboyevil</span>
+                </div>
             </div>
         </header>
 
-        <section class="card mb-8">
-            <h2 class="section-title">À Propos de Moi</h2>
+        <section class="card mb-10">
+            <h2 class="section-title"><span class="emoji">👋</span> À Propos de Moi</h2>
             <p class="text-lg leading-relaxed text-gray-700">
-                Bonjour ! Je suis AstroboyEvil, un professionnel expérimenté dans la gérance de serveurs et la gestion de projets. Passionné par l'optimisation des serveurs et la coordination d'équipes pour atteindre des objectifs ambitieux, je mets à profit mes compétences techniques et organisationnelles pour garantir le bon fonctionnement du serveur ainsi que de son équipe.
+                Bonjour ! Je suis AstroboyEvil, un professionnel expérimenté dans la <strong>gérance de serveurs</strong> et la <strong>gestion de projets</strong>. Passionné par l'optimisation des serveurs et la coordination d'équipes pour atteindre des objectifs ambitieux, je mets à profit mes compétences techniques et organisationnelles pour garantir le bon fonctionnement du serveur ainsi que de son équipe.
                 <br><br>
                 Mon parcours m'a permis de développer une expertise solide dans la gestion d'équipe en tout genre (modération, animation, communication...) et dans leur coordination pour l'avancement d'un projet ou l'agrandissement d'un serveur. Je suis toujours à la recherche de nouveaux défis pour contribuer à des projets innovants et à forte valeur ajoutée.
                 <br><br>
@@ -53,13 +78,13 @@
             </p>
         </section>
 
-        <section class="card mb-8">
-            <h2 class="section-title">Expérience Professionnelle</h2>
+        <section class="card mb-10">
+            <h2 class="section-title"><span class="emoji">💼</span> Expérience Professionnelle</h2>
 
             <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-xl font-semibold text-gray-800">Gérant Serveur</h3>
-                <p class="text-md text-gray-600">NexusCraft Studio | Serveur Minecraft | Mars 2024 - Janvier 2025</p>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
+                <p class="text-md text-gray-600 mb-2">NexusCraft Studio | Serveur Minecraft | Mars 2024 - Janvier 2025</p>
+                <ul class="list-disc list-inside mt-2 text-gray-700 list-item-spacing">
                     <li>Gérance de toutes les équipes du serveur : communication, modérateurs, animateurs, etc.</li>
                     <li>Suivi du projet d'un serveur Minecraft (mises à jour, annonces, recherches de nouveautés...).</li>
                 </ul>
@@ -67,8 +92,8 @@
 
             <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-xl font-semibold text-gray-800">Administrateur</h3>
-                <p class="text-md text-gray-600">Sunset Military RP | Serveur Gmod | 2022</p>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
+                <p class="text-md text-gray-600 mb-2">Sunset Military RP | Serveur Gmod | 2022</p>
+                <ul class="list-disc list-inside mt-2 text-gray-700 list-item-spacing">
                     <li>Préparation et participation à l'ouverture d'un serveur Garry's Mod.</li>
                     <li>Recherche de fonctionnalités uniques.</li>
                     <li>Test et recherche de bugs sur le serveur.</li>
@@ -78,13 +103,13 @@
 
             </section>
 
-        <section class="card mb-8">
-            <h2 class="section-title">Formation</h2>
+        <section class="card mb-10">
+            <h2 class="section-title"><span class="emoji">🎓</span> Formation</h2>
 
             <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
                 <h3 class="text-xl font-semibold text-gray-800">Bac Pro Système Numérique</h3>
-                <p class="text-md text-gray-600">Obtenu en 2025 | Réseau Informatique et Système Communicant</p>
-                <ul class="list-disc list-inside mt-2 text-gray-700">
+                <p class="text-md text-gray-600 mb-2">Obtenu en 2025 | Réseau Informatique et Système Communicant</p>
+                <ul class="list-disc list-inside mt-2 text-gray-700 list-item-spacing">
                     <li>Connaissances basiques sur tout type de codage et programmation.</li>
                     <li>Administration Réseaux.</li>
                     <li>Gérance d'équipe et Chef de projet.</li>
@@ -93,84 +118,68 @@
 
             </section>
 
-        <section class="card mb-8">
-            <h2 class="section-title">Compétences</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
+        <section class="card mb-10">
+            <h2 class="section-title"><span class="emoji">🛠️</span> Compétences</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> <div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Compétences Techniques</h3>
-                    <ul class="list-disc list-inside text-gray-700">
-                        <li>Langages de programmation (ex: Python, JavaScript, Java)</li>
-                        <li>Frameworks (ex: React, Angular, Vue.js, Spring Boot)</li>
-                        <li>Bases de données (ex: SQL, NoSQL, MongoDB)</li>
-                        <li>Outils (ex: Git, Docker, AWS, Azure)</li>
+                    <ul class="list-disc list-inside text-gray-700 list-item-spacing">
+                        <li>Langages de programmation basique</li>
+                        <li>Suite Microsoft 365</li>
                         </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Langues</h3>
-                    <ul class="list-disc list-inside text-gray-700">
+                    <ul class="list-disc list-inside text-gray-700 list-item-spacing">
                         <li>Français: Langue Maternelle</li>
-                        <li>Anglais: Courant (C1)</li>
-                        <li>Espagnol: Intermédiaire (B2)</li>
+                        <li>Anglais: Courant (B1)</li>
                         </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Compétences Non Techniques (Soft Skills)</h3>
-                    <ul class="list-disc list-inside text-gray-700">
+                    <ul class="list-disc list-inside text-gray-700 list-item-spacing">
                         <li>Communication</li>
                         <li>Travail d'équipe</li>
+                        <li>Autonome</li>
                         <li>Résolution de problèmes</li>
                         <li>Adaptabilité</li>
+                        <li>Gestion et coordination d’équipe en ligne</li>
                         </ul>
                 </div>
             </div>
         </section>
 
-        <section class="card mb-8">
-            <h2 class="section-title">Projets</h2>
-            <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                Voici quelques-uns de mes projets récents. N'hésitez pas à cliquer sur les liens pour en savoir plus.
+        <section class="card mb-10">
+            <h2 class="section-title"><span class="emoji">🚀</span> Projets</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                Voici mon projet récent. N'hésitez pas à cliquer sur le lien pour en savoir plus.
             </p>
 
             <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                <h3 class="text-xl font-semibold text-gray-800">Nom du Projet 1</h3>
-                <p class="text-md text-gray-600">Technologies utilisées: [Liste des technologies]</p>
+                <h3 class="text-xl font-semibold text-gray-800">Serveur Communautaire Discord - Tsukuyomi</h3>
+                <p class="text-md text-gray-600 mb-2">Fonctionnalités: Salons textuels & vocaux, Système de Rank</p>
                 <p class="text-gray-700 mt-2">
-                    Description courte du projet, de son objectif et de votre rôle.
+                    Un serveur Discord conçu pour la communauté, offrant des espaces de discussion variés et un système de rangs pour encourager l'engagement et la reconnaissance des membres.
                 </p>
-                <a href="https://github.com/votrenom/projet1" target="_blank" rel="noopener noreferrer"
-                   class="text-blue-600 hover:underline mt-2 inline-block">Voir le projet (GitHub/Lien démo)</a>
-            </div>
-
-            <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                <h3 class="text-xl font-semibold text-gray-800">Nom du Projet 2</h3>
-                <p class="text-md text-gray-600">Technologies utilisées: [Liste des technologies]</p>
-                <p class="text-700 mt-2">
-                    Description courte du projet, de son objectif et de votre rôle.
-                </p>
-                <a href="https://votrenom.com/projet2" target="_blank" rel="noopener noreferrer"
-                   class="text-blue-600 hover:underline mt-2 inline-block">Voir le projet (GitHub/Lien démo)</a>
+                <a href="https://discord.gg/XG5PE9QfqP" target="_blank" rel="noopener noreferrer"
+                   class="text-blue-600 hover:underline mt-2 inline-block font-medium">Rejoindre le Discord &rarr;</a>
             </div>
 
             </section>
 
-        <section class="card text-center mb-8">
-            <h2 class="section-title">Contact & Téléchargement</h2>
-            <p class="text-lg text-gray-700 mb-6">
-                Je suis ouvert(e) aux nouvelles opportunités. N'hésitez pas à me contacter ou à télécharger mon CV.
+        <section class="card text-center mb-10">
+            <h2 class="section-title"><span class="emoji">📬</span> Contact</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                Je suis ouvert(e) aux nouvelles opportunités. N'hésitez pas à me contacter via Discord.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <div class="flex justify-center">
                 <a href="https://discord.com/users/astroboyevil" target="_blank" rel="noopener noreferrer"
-                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    Me Contacter sur Discord
-                </a>
-                <a href="https://example.com/votre_cv.pdf" download="AstroboyEvil_CV.pdf"
-                   class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    Télécharger mon CV (PDF)
+                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-7 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center">
+                    <span class="text-xl mr-2">💬</span> Me Contacter sur Discord
                 </a>
             </div>
         </section>
 
-        <footer class="text-center text-gray-500 text-sm mt-8">
+        <footer class="text-center text-gray-500 text-sm mt-10">
             <p>&copy; 2025 AstroboyEvil. Tous droits réservés.</p>
         </footer>
 
